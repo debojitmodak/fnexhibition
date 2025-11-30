@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELP Exhibition 2025 | Food & Nutrition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Apple-esque Typography and Base Styles */
+        :root {
+            --apple-grey: #f5f5f7;
+            --apple-dark: #1d1d1f;
+            --apple-blue: #0071e3;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fff;
+            color: var(--apple-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Apple Style Glassmorphism Nav */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Hero Text Gradient */
+        .hero-gradient {
+            background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Card Hover Effects */
+        .hover-scale {
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+
+        /* Hide Scrollbar for horizontal scrolling if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-screen-xl mx-auto px-6 h-12 flex items-center justify-between text-xs font-medium">
+            <a href="#" class="text-lg font-semibold tracking-tight flex items-center"><i class="fa-solid fa-utensils mr-2 text-[#f56300]"></i>ELP 2025</a>
+            <div class="hidden md:flex space-x-8 text-gray-600">
+                <a href="#bakery" class="hover:text-black transition-colors">Bakery</a>
+                <a href="#nutra" class="hover:text-black transition-colors">Nutraceuticals</a>
+                <a href="#fsm" class="hover:text-black transition-colors">Live Counters</a>
+                <a href="#menu" class="hover:text-black transition-colors">Menu</a>
+            </div>
+            <a href="#details" class="bg-black text-white px-4 py-1 rounded-full hover:bg-gray-800 transition-colors">Dec 4</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 bg-[#fbfbfd]">
+        <p class="text-[#f56300] font-semibold text-lg md:text-xl mb-4 reveal">College of Community Science</p>
+        <h1 class="text-5xl md:text-8xl font-bold tracking-tighter mb-6 leading-tight text-[#1d1d1f] reveal" style="transition-delay: 100ms;">
+            Experiential.<br>Learning.
+        </h1>
+        <p class="text-xl md:text-3xl text-gray-500 max-w-2xl mx-auto mb-10 font-medium reveal" style="transition-delay: 200ms;">
+            Presented by the 4th Year Students.<br>Food & Nutrition Department.
+        </p>
+        
+        <div class="flex gap-4 reveal" style="transition-delay: 300ms;">
+            <a href="#menu" class="bg-[#0071e3] text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-[#0077ed] transition-colors">
+                View the Menu
+            </a>
+            <a href="#details" class="text-[#0071e3] px-8 py-3 rounded-full text-lg font-medium hover:underline flex items-center">
+                Event Details <i class="fas fa-chevron-right text-xs ml-2"></i>
+            </a>
+        </div>
+
+        <div class="mt-20 w-full max-w-5xl reveal" style="transition-delay: 400ms;">
+            <!-- Abstract representation of food/science -->
+            <div class="w-full h-64 md:h-96 bg-gray-200 rounded-3xl overflow-hidden relative shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop" alt="Food Presentation" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h2 class="text-white text-4xl md:text-6xl font-bold drop-shadow-lg">Taste the Science.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Trinity (Departments) -->
+    <section class="py-24 bg-white">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-bold mb-16 text-center reveal">Three Distinct Experiences.</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Bakery Section (Large Card) -->
+                <div id="bakery" class="col-span-1 md:col-span-2 bg-[#f5f5f7] rounded-[40px] p-10 md:p-20 flex flex-col items-center text-center overflow-hidden relative hover-scale reveal">
+                    <p class="text-sm font-bold text-gray-500 mb-2 uppercase tracking-wide">The Bakery</p>
+                    <h3 class="text-4xl md:text-6xl font-bold mb-4">Sweetness. Redefined.</h3>
+                    <p class="text-lg text-gray-600 max-w-md mb-8">Precision baking meets culinary art. From delicate Swiss Rolls to rich Butter Cakes.</p>
+                    <div class="w-full max-w-md h-64 bg-white rounded-2xl shadow-sm overflow-hidden">
+                         <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Nutraceuticals (Bento Card) -->
+                <div id="nutra" class="bg-black text-white rounded-[40px] p-10 flex flex-col justify-between hover-scale reveal min-h-[500px] relative overflow-hidden">
+                    <div class="relative z-10">
+                        <p class="text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Nutraceuticals & Health</p>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-4">Health in<br>Every Bite.</h3>
+                        <p class="text-gray-400">Jalpan mix, pickles, and scientifically balanced salads.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50">
+                </div>
+
+                <!-- FSM (Bento Card) -->
+                <div id="fsm" class="bg-[#f5f5f7] rounded-[40px] p-10 flex flex-col justify-between hover-scale reveal min-h-[500px] relative overflow-hidden">
+                    <div class="relative z-10">
+                        <p class="text-sm font-bold text-[#f56300] mb-2 uppercase tracking-wide">Food Service Management</p>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-4 text-black">Live Counters.</h3>
+                        <p class="text-gray-600">Freshly prepared right before your eyes. Experience the heat of the kitchen.</p>
+                    </div>
+                    <div class="mt-8 rounded-2xl overflow-hidden h-64 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=2077&auto=format&fit=crop" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Menu (Specifications Grid) -->
+    <section id="menu" class="py-24 bg-[#fbfbfd]">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center reveal">The Lineup.</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                
+                <!-- Menu Item -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-[#f56300]"><i class="fa-solid fa-cake-candles"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Cup Cakes</h4>
+                    <p class="text-sm text-gray-500">Soft, fluffy, frosted perfection.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-yellow-500"><i class="fa-solid fa-bread-slice"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Butter Cakes</h4>
+                    <p class="text-sm text-gray-500">Rich buttery goodness.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-amber-700"><i class="fa-solid fa-cookie"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Butter Cookies</h4>
+                    <p class="text-sm text-gray-500">Melt in your mouth texture.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-pink-500"><i class="fa-solid fa-stroopwafel"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Pastries</h4>
+                    <p class="text-sm text-gray-500">Classic layers of delight.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-stone-600"><i class="fa-solid fa-cookie-bite"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Salty Cookies</h4>
+                    <p class="text-sm text-gray-500">Savory crunch.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-red-400"><i class="fa-solid fa-circle-notch"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Swiss Roll</h4>
+                    <p class="text-sm text-gray-500">Spongy rolled elegance.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-gray-300"><i class="fa-solid fa-snowflake"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Coconut Cake</h4>
+                    <p class="text-sm text-gray-500">Tropical flavor infusion.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-orange-600"><i class="fa-solid fa-bowl-rice"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Jalpan Mix</h4>
+                    <p class="text-sm text-gray-500">Traditional snack blend.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-green-700"><i class="fa-solid fa-jar"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Pickles</h4>
+                    <p class="text-sm text-gray-500">Preserved artisanal flavors.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-green-500"><i class="fa-solid fa-leaf"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Salads</h4>
+                    <p class="text-sm text-gray-500">Different types. Fresh & Crisp.</p>
+                </div>
+
+                 <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="text-3xl mb-4 text-amber-900"><i class="fa-solid fa-candy-cane"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Chocolates</h4>
+                    <p class="text-sm text-gray-500">Handcrafted sweetness.</p>
+                </div>
+
+                <div class="bg-[#1d1d1f] p-6 rounded-3xl shadow-sm flex flex-col justify-center items-center text-center text-white reveal">
+                    <h4 class="text-xl font-bold mb-1">And More...</h4>
+                    <p class="text-sm text-gray-400">Visit us to see the full spread.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Footer Info -->
+    <section id="details" class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-screen-xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6 reveal">Mark your calendar.</h2>
+            <div class="inline-flex flex-col md:flex-row items-center gap-8 md:gap-16 justify-center reveal">
+                <div class="text-left">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Date</p>
+                    <p class="text-3xl font-semibold">Dec 4, 2025</p>
+                </div>
+                <div class="h-12 w-px bg-gray-200 hidden md:block"></div>
+                <div class="text-left">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Location</p>
+                    <p class="text-3xl font-semibold">College of Community Science, AAU, Jorhat</p>
+                </div>
+                <div class="h-12 w-px bg-gray-200 hidden md:block"></div>
+                <div class="text-left">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Organizers</p>
+                    <p class="text-3xl font-semibold">Dept. Food & Nutrition</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 reveal">
+                <a href="#" class="bg-[#0071e3] text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-[#0077ed] transition-colors shadow-lg shadow-blue-500/30">
+                    Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#f5f5f7] py-10 text-xs text-gray-500 border-t border-gray-200">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <p class="mb-2">Experiential Learning Program (ELP) 2025.</p>
+            <p>Designed by 4th Year Students. Food items available for purchase while stocks last.</p>
+            <div class="mt-4 pt-4 border-t border-gray-300 flex justify-between">
+                <span>Copyright © 2025 Food & Nutrition Dept.</span>
+                <span>Assam Agricultural University</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const elements = document.querySelectorAll('.reveal');
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
