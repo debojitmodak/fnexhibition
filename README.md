@@ -21,7 +21,7 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-        /* Smooth Scroll Behavior */
+		/* Smooth Scroll Behavior */
         html {
             scroll-behavior: smooth;
         }
